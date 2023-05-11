@@ -78,4 +78,40 @@ const thesis2 = renameThesis1(thesis, "Saidali");
 thesis; // {name: "Ali", date: 1991}
 thesis2; // {name: "Saidasli", date: 1991}
 
- 
+//  ITERATION
+function sum(numbers) {
+  let total = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    total += numbers[i];
+  }
+  return total;
+}
+sum([0, 1, 2, 3, 4]); //10
+
+// RECURSION
+function sumNums(nums) {
+  if (nums.length === 1) {
+    return nums[0];
+  } else {
+    return nums[0] + sumNums(nums.slice(1));
+  }
+}
+sum([0, 1, 2, 3, 4]); //10
+
+// recursiveFibonacci
+function recursiveFibonacci(n) {
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+  return recursiveFibonacci(n - 2) + recursiveFibonacci(n - 1);
+}
+let res = recursiveFibonacci(10);
+console.log(res);
+
+// first class FUNCTIONS
+// !!! can be passed around as value (like callbacks!)
+
+// higher-order functions
+// take other functions as input/output
+
+// Remember : Dont loop
+// use higher-order functions like map, reduce , filter instead
