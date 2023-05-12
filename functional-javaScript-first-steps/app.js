@@ -148,9 +148,11 @@ const wholes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //   return num > 4;
 // }, wholes);
 
-
 // IS IT PRIME?
-function isPrime(n){
-  
+function isPrime(n) {
+  if (n <= 1) return false;
+  const wholeNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const possibleFactors = wholes.filter((m) => m > 1 && m < n);
+  const factors = possibleFactors.filter((m) => n % m === 0);
+  return factors.length === 0 ? true : false;
 }
-
