@@ -115,3 +115,42 @@ console.log(res);
 
 // Remember : Dont loop
 // use higher-order functions like map, reduce , filter instead
+
+// ................................................
+// HIGHER-ORDER functions filter(), map(), reduce();
+
+// function filter(predicateFn, array) {
+//   if (length(array) === 0) return [];
+//   const firstItem = head(array);
+//   const filteredFirst = predicateFn(firstItem) ? [firstItem] : [];
+//   return concat(filteredFirst, filter(predicateFn, tail(array)));
+// }
+
+function length(array) {
+  return array.length;
+}
+
+const exampleArr = [1, 2, 3, 4, 5];
+console.log(length(exampleArr));
+
+//////////////////////////////////////////////////
+function isEven(n) {
+  return n % 2 === 0;
+}
+
+const wholes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// odds = filter((n) => {
+//   return n % 2 !== 0;
+// }, wholes);
+
+// greaterThanFour = filter((num) => {
+//   return num > 4;
+// }, wholes);
+
+
+// IS IT PRIME?
+function isPrime(n){
+  
+}
+
