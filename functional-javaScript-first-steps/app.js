@@ -156,3 +156,53 @@ function isPrime(n) {
   const factors = possibleFactors.filter((m) => n % m === 0);
   return factors.length === 0 ? true : false;
 }
+
+// CLOSURE
+function makeAdjectifier(adjective) {
+  return function (noun) {
+    return adjective + " " + noun;
+  };
+}
+
+const coolify = makeAdjectifier("cool");
+coolify("workshop");
+coolify("weather");
+
+// CURRYING
+function curryGreet(greeting) {
+  return function (name) {
+    return `${greeting}, ${name}`;
+  };
+}
+
+const greetItalian = curryGreet("Ciao");
+greetItalian("Ali");
+
+const greetTex = curryGreet("Howdy");
+greetTex("Usman");
+greetTex("Zubary");
+
+// COMPOSING FUNCTIONS
+let ender = (ending) => (input) => input + ending;
+
+let adore = ender(" rocks");
+let announce = ender(", y'all");
+let exclaim = ender("!");
+
+let hypeUp = (x) => exclaim(announce(adore(x)));
+hypeUp("JS"); // "JS rocks, y'all!"
+hypeUp("FP"); // "FP rocks, y'all!"
+
+// CLOSURE EXAMPLE FROM BRO CODE YOUTUBE
+let score = (function () {
+  let points = 0;
+
+  return function () {
+    points += 1;
+    return points;
+  };
+})();
+
+console.log(score);
+console.log(score);
+console.log(score);
