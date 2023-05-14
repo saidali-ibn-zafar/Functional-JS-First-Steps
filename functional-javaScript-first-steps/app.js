@@ -206,3 +206,50 @@ let score = (function () {
 console.log(score);
 console.log(score);
 console.log(score);
+
+// NO MUTATION (safer)
+const oldcities = ["Delhi", "Bombay", "Bangalore"];
+
+const newCities = oldcities.map((city) => {
+  if (city === "Bombay") return "Mumbai";
+  if (city === "Bangalore") return "Bangaluru";
+  return city;
+});
+
+newCities; // ["Delhi", "Mumbai", "Bangaluru"]
+oldcities; // ["Delhi", "Bombay", "Bangalore"]
+
+
+
+function greetingMaker(salutation) {
+  return function (name) {
+    return salutation + " " + name;
+  };
+}
+
+const greetingUz = greetingMaker("Salom");
+console.log(greetingUz("Saidali"));
+
+// push function
+arr = [1, 2, 3, 4, 5];
+
+function push(element, array) {
+  return [...array, element];
+}
+
+result = push(12, arr);
+
+//UPDATING
+function update(index, value, array) {
+  return array
+    .slice(0, index - 1)
+    .concat([value])
+    .concat(array.slice(index));
+}
+const preUpdate = ["spellling", "is", "hard"];
+
+let postUpdate = ["spelling", "is", "hard"];
+
+postUpdate = update(1, "spelling", preUpdate);
+
+console.log(postUpdate);
