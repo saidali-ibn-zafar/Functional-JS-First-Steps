@@ -60,3 +60,39 @@ const fibPos1 = (pos) => {
 };
 
 console.log(fibPos1(6));
+
+
+// REPEATING PROGRAM
+//with while loop
+function repetition(txt, n) {
+	let result = '';
+	while(n > 0){
+		result += txt;
+		n--;
+	}
+	return result;
+}
+repetition('*', 7);
+
+//with recursion
+const repetition = (txt, n=> {
+	if(n < 0){
+		return "";
+	}
+	if(n === 1){
+		return txt;
+	}
+	else{
+		return txt + repetition(txt, n- 1);
+	}
+} 
+
+repetition('Saidali', 7);
+
+//with repeat();
+const repetition = (txt, n) => txt.repeat(n);
+repetition('Ali', 5);
+
+//much more better, because we need to check if the n is positive or not!
+const repetition = (txt, n) => n ? txt.repeat(n) : "";
+repetition('Ali', 2);
