@@ -96,3 +96,29 @@ repetition('Ali', 5);
 //much more better, because we need to check if the n is positive or not!
 const repetition = (txt, n) => n ? txt.repeat(n) : "";
 repetition('Ali', 2);
+
+
+//multiplying
+function multiSum(num, ten=10) {
+	return num && ten ? num * ten + multiSum(num, ten-1) : 0
+}
+
+OR THIS WAY
+const multiSum = (num, ten=10) => num && ten ? num * ten + multiSum(num, ten-1) : 0
+
+///////////////////////////////////////////
+function factorial(n) {
+	if(n < 1) return 1;
+	return n * factorial(n-1);
+}
+///////////////////////////////////////////
+const factorial = (n) => n ? n * factorial(n-1) : 1;
+///////////////////////////////////////////
+
+const addUp = (n) => n ? n * (n+1)/2 : 1; // but we did not use recursion in this case
+//so do it with below:
+const addUp = (n) => n > 1 ? n + addUp(n-1) : 1;
+
+///////////////////////////////////////////
+const numberSquares = (n) => n > 1 ? n ** 2 + numberSquares(n-1) : 1;
+///////////////////////////////////////////
