@@ -103,7 +103,7 @@ function multiSum(num, ten=10) {
 	return num && ten ? num * ten + multiSum(num, ten-1) : 0
 }
 
-OR THIS WAY
+// OR THIS WAY
 const multiSum = (num, ten=10) => num && ten ? num * ten + multiSum(num, ten-1) : 0
 
 ///////////////////////////////////////////
@@ -122,3 +122,45 @@ const addUp = (n) => n > 1 ? n + addUp(n-1) : 1;
 ///////////////////////////////////////////
 const numberSquares = (n) => n > 1 ? n ** 2 + numberSquares(n-1) : 1;
 ///////////////////////////////////////////
+
+
+///////////////////////////////////////////
+const doubleFactorial = (num) => num > 1 ? num * doubleFactorial(num-2) : 1;
+///////////////////////////////////////////
+
+///////////////////////////////////////////
+	const sumArray = (arr) => {
+	arr = arr.flat(Infinity);
+	return arr.length > 0 ? arr.reduce((sum, n) => sum + n, 0) : 0;
+	}
+	sumArray([1,2,3,4]);
+///////////////////////////////////////////
+
+
+///////////////////////////////////////////
+
+function findHighest(arr) {
+	arr = arr.flat(Infinity);
+	const arrSorted = [...arr].sort((a,b) => a - b);
+	return arrSorted.length > 0 ? arrSorted[arrSorted.length-1] : 0;
+} 
+
+findHighest([1,2,3,4,5]);
+///////////////////////////////////////////
+
+///////////////////////////////////////////
+const findHighest= (arr) => {
+	const arrSorted = [...arr].flat(Infinity).sort((a,b) => a - b);
+	return arrSorted.length > 0 ? arrSorted[arrSorted.length-1] : 0;
+} 
+
+findHighest([1,2,3,4,5]);
+///////////////////////////////////////////
+
+///////////////////////////////////////////
+function findHighest(arr,max = 0){
+	const lastArrEl = arr.pop();
+	max = max > lastArrEl ? max : lastArrEl;
+  return arr.length ? findHighest(arr,max) : max
+}
+/////////////////////////////////////////// 
