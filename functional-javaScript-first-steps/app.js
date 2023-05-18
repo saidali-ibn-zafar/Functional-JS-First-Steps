@@ -253,3 +253,32 @@ let postUpdate = ["spelling", "is", "hard"];
 postUpdate = update(1, "spelling", preUpdate);
 
 console.log(postUpdate);
+
+
+
+
+///////////////////////////////////
+// cool example for closure
+var counter = (function () {
+        var privateCounter = 0;
+        function changeBy(val) {
+          privateCounter += val;
+        }
+        return {
+          increment: function () {
+            changeBy(1);
+          },
+          decrement: function () {
+            changeBy(-1);
+          },
+          value: function () {
+            return privateCounter;
+          },
+        };
+      })();
+
+      console.log(counter.value());
+      counter.increment();
+      counter.increment();
+      console.log(counter.value());
+///////////////////////////////////
