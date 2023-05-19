@@ -282,3 +282,58 @@ var counter = (function () {
       counter.increment();
       console.log(counter.value());
 ///////////////////////////////////
+
+
+// = = = = = = = = = = = = = = = = =
+const sumOfNums = (numbers) => {
+  return numbers.length < 1
+    ? 0
+    : numbers.length === 1
+    ? numbers[0]
+    : numbers[0] + sumOfNums(numbers.slice(1));
+};
+
+// console.log(sumOfNums([1, 2, 3, 4, 5]));
+// = = = = = = = = = = = = = = = = =
+
+// = = = = = = = = = = = = = = = = =
+const factorial = (n) =>  n > 1 ? n * factorial(n-1) : 1;
+// console.log(factorial(1));
+// = = = = = = = = = = = = = = = = =
+
+// = = = = = = = = = = = = = = = = =
+const random = (result = 0, counter = 0) => {
+    return result === 5 
+    ? console.log(`Result is ${result}.\nCounted ${counter} times!`)
+    : (result = Math.round(Math.random() * 10),
+    counter++,
+    random(result, counter));
+};
+// random();
+// = = = = = = = = = = = = = = = = =
+
+// = = = = = = = = = = = = = = = = =
+const myName = (firstName) => {
+    return (lastName) => {
+        return firstName + ' ' + lastName;
+    };
+};
+
+const fullName = myName('Saidali')('Zikirillaev');
+console.log(fullName);
+// = = = = = = = = = = = = = = = = =
+
+// = = = = = = = = = = = = = = = = =
+const createFullName = (firstName) => (lastName, title) =>  title + ' ' + firstName + ' ' + lastName;
+
+const fullNameWithTitle = createFullName('John');
+console.log(fullNameWithTitle('Doe', 'Mr.'));
+// = = = = = = = = = = = = = = = = =
+
+// = = = = = = = = = = = = = = = = =
+
+// = = = = = = = = = = = = = = = = =
+
+// = = = = = = = = = = = = = = = = =
+
+// = = = = = = = = = = = = = = = = =
